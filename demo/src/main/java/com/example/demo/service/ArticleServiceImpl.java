@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import com.example.demo.mapper.ArticleMapper;
 import com.example.demo.model.ArticleVO;
@@ -17,6 +17,11 @@ public class ArticleServiceImpl implements ArticleService {
 
   public List<ArticleVO> getList() {
     return articleMapper.getList();
+  }
+
+  @Override
+  public void add(Map<String, Object> param) {  
+    articleMapper.add(param);
   }
 
 }
