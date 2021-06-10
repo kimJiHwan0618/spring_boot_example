@@ -9,7 +9,7 @@ public interface ArticleService {
 
   public List<ArticleVO> getList();
 
-  public void add(Map<String, Object> param);
+  public long addList(Map<String, Object> param);
   
 
 }

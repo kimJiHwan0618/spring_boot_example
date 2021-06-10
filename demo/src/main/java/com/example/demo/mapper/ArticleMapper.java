@@ -12,6 +12,6 @@ public interface ArticleMapper {
 
   public List<ArticleVO> getList();
 
-  public void add(Map<String, Object> param);
+  public void addList(Map<String, Object> param);
   
 }

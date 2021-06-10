@@ -42,9 +42,10 @@ public class ArticleController {
                                      // {
                                       // key : [value]
                                      // } 
-    articleService.add(param);
 
-    return "게시글이 추가되었습니다.";
+    long newId = articleService.addList(param);
+
+    return newId + "번 게시글이 추가되었습니다.";
 
   }
 
