@@ -12,29 +12,41 @@
     <h1>상세 페이지</h1>
 
     <ul class="detail__list">
-      <dl>
-        <dt>ID :</dt>
-        <dd th:text="${article.id}"></dd>
-      </dl>
-      <dl>
-        <dt>생성시간 :</dt>
-        <dd th:text="${article.regDate}"></dd>
-      </dl>
-      <dl>
-        <dt>제목 :</dt>
-        <dd th:text="${article.title}"></dd>
-      </dl>
-      <dl>
-        <dt>내용 :</dt>
-        <dd th:text="${article.body}"></dd>
-      </dl>
+      <li>
+        <dl>
+          <dt>ID :</dt>
+          <dd th:text="${article.id}"></dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>생성시간 :</dt>
+          <dd th:text="${article.regDate}"></dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>제목 :</dt>
+          <dd th:text="${article.title}"></dd>
+        </dl>
+      </li>
+      <li>
+        <dl>
+          <dt>내용 :</dt>
+          <dd th:text="${article.body}"></dd>
+        </dl>
+      </li>
     </ul>
 
     <div class="detail__btn__wrap">
       <a href="list">게시물 리스트</a>
       <a href="add">게시물 추가</a>
       <a href="./modify?id=${article.id}">게시물 수정</a>
-      <a href="./doDelete?id=${article.id}">게시물 삭제</a>
+      <a
+        onclick="if( confirm('삭제하시겠습니까?') == false ) return false;"
+        th:href="@{./doDelete(id=${article.id})}"
+        >게시물 삭제</a
+      >
     </div>
   </body>
 </html>

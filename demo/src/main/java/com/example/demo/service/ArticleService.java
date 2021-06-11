@@ -14,5 +14,7 @@ public interface ArticleService {
   public int getTotalCount();
 
   public ArticleVO getOne(long id);
+
+  public void delete(long id);
   
 }

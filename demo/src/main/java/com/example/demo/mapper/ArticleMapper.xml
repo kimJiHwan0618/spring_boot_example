@@ -16,7 +16,12 @@
 		SELECT *
 		FROM article
 		WHERE id = #{id}
-	</select>
+	</select>	
+
+	<delete id="delete" parameterType="long">
+		DELETE FROM article
+		where ID = #{id}
+	</delete>
 
 	<insert id="addList" parameterType="map" useGeneratedKeys="true" keyProperty="id">
 		INSERT INTO article

@@ -34,6 +34,7 @@ public class ArticleController {
   public String showDetail(Model model, long id) {
     
     ArticleVO article = articleService.getOne(id);
+    
 
     model.addAttribute("article", article);
 
@@ -64,6 +65,26 @@ public class ArticleController {
 
     sb.append("alert('"+ msg +"');");
     sb.append("location.replace('./detail?id="+ newId +"')");
+    
+    sb.insert(0,"<script>");
+    sb.append("</script>");
+
+    return sb.toString();
+
+  }
+
+  @RequestMapping("/article/doDelete")
+  @ResponseBody
+  public String doDelete(long id) {
+
+    articleService.delete(id);
+
+    String msg =  id + "번 게시글이 삭제되었습니다.";
+
+    StringBuilder sb = new StringBuilder();
+
+    sb.append("alert('"+ msg +"');");
+    sb.append("location.replace('./detail?id="+ id +"')");
     
     sb.insert(0,"<script>");
     sb.append("</script>");

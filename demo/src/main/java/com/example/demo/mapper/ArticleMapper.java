@@ -17,5 +17,7 @@ public interface ArticleMapper {
   public int getTotalCount();
 
   public ArticleVO getOne(long id);
+
+  public void delete(long id);
   
 }

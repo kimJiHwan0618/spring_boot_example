@@ -45,4 +45,11 @@ public class ArticleServiceImpl implements ArticleService {
 
   }
 
+  @Override
+  public void delete(long id) {  
+
+   articleMapper.delete(id);
+
+  }
+
 }
