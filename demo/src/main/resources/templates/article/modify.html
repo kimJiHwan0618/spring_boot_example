@@ -12,7 +12,7 @@
     <h1>게시글 수정</h1>
 
     <form action="./doModify" method="POST" onsubmit="submitAddForm(this);">
-      <input type="hidden" name="id" value="${article.id}" />
+      <input type="hidden" name="id" th:value="${article.id}" />
       <div class="add__list__wrap">
         <dl>
           <dt>제목</dt>

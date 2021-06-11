@@ -19,5 +19,7 @@ public interface ArticleMapper {
   public ArticleVO getOne(long id);
 
   public void delete(long id);
+
+  public void listModify(Map<String, Object> param);
   
 }

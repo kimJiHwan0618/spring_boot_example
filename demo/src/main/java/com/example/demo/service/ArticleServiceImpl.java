@@ -52,4 +52,11 @@ public class ArticleServiceImpl implements ArticleService {
 
   }
 
+  @Override
+  public void listModify(Map<String, Object> param) {  
+
+   articleMapper.listModify(param);
+   
+  }
+
 }
