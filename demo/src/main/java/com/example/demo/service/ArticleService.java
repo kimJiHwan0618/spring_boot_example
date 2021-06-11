@@ -10,6 +10,8 @@ public interface ArticleService {
   public List<ArticleVO> getList();
 
   public long addList(Map<String, Object> param);
+
+  public int getTotalCount();
   
 
 }

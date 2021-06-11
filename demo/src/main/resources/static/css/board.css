@@ -11,6 +11,10 @@ h1 {
   margin: 36px 0;
 }
 
+h2 {
+  margin-bottom: 26px;
+}
+
 ul,
 dl {
   list-style: none;
@@ -106,4 +110,5 @@ dl {
   text-align: center;
   line-height: 60px;
   width: 120px;
+  margin-bottom: 30px;
 }

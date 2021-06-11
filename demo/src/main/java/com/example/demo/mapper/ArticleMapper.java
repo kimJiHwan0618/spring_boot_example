@@ -13,5 +13,7 @@ public interface ArticleMapper {
   public List<ArticleVO> getList();
 
   public void addList(Map<String, Object> param);
+
+  public int getTotalCount();
   
 }

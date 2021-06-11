@@ -11,6 +11,15 @@
 		FROM article 
 	</select>
 
+	<select 
+	  id="getTotalCount" 
+		parameterType="map"  
+		resultType="int"
+  >
+		SELECT COUNT(*)
+		FROM article;
+	</select>
+
 	<insert id="addList" parameterType="map" useGeneratedKeys="true" 
 	    keyProperty="id">
 		INSERT INTO article

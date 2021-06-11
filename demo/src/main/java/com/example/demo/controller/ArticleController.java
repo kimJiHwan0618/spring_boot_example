@@ -22,8 +22,10 @@ public class ArticleController {
   @RequestMapping("/article/list")
   public String main(Model model) {
     List<ArticleVO> list = articleService.getList();
+    int totalCount = articleService.getTotalCount();
 
     model.addAttribute("list", list);
+    model.addAttribute("totalCount", totalCount);
 
     return "article/list";
   }
