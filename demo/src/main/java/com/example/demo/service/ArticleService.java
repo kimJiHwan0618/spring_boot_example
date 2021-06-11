@@ -12,6 +12,7 @@ public interface ArticleService {
   public long addList(Map<String, Object> param);
 
   public int getTotalCount();
-  
 
+  public ArticleVO getOne(long id);
+  
 }

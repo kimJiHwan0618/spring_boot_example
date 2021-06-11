@@ -88,7 +88,8 @@ dl {
 }
 
 .list__button__wrap li input,
-.add__link {
+.add__link,
+.detail__btn__wrap a {
   display: inline-block;
   width: 100px;
   height: 60px;
@@ -100,7 +101,8 @@ dl {
   cursor: pointer;
 }
 .list__button__wrap li input:hover,
-.add__link:hover {
+.add__link:hover,
+.detail__btn__wrap a:hover {
   background-color: rgb(18, 67, 173);
 }
 
@@ -111,4 +113,25 @@ dl {
   line-height: 60px;
   width: 120px;
   margin-bottom: 30px;
+}
+
+.detail__list dl {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.detail__btn__wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.detail__btn__wrap a {
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+  width: auto;
+  padding: 20px;
+  box-sizing: border-box;
 }

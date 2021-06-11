@@ -30,6 +30,17 @@ public class ArticleController {
     return "article/list";
   }
 
+  @RequestMapping("/article/detail")
+  public String showDetail(Model model, long id) {
+    
+    ArticleVO article = articleService.getOne(id);
+
+    model.addAttribute("article", article);
+
+    return "article/detail";
+
+  }
+
   @RequestMapping("/article/add")
   public String listAdd() {
 
@@ -56,6 +67,7 @@ public class ArticleController {
     
     sb.insert(0,"<script>");
     sb.append("</script>");
+
     return sb.toString();
 
   }

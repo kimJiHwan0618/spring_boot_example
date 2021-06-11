@@ -15,5 +15,7 @@ public interface ArticleMapper {
   public void addList(Map<String, Object> param);
 
   public int getTotalCount();
+
+  public ArticleVO getOne(long id);
   
 }

@@ -38,4 +38,11 @@ public class ArticleServiceImpl implements ArticleService {
 
   }
 
+  @Override
+  public ArticleVO getOne(long id) {  
+
+    return articleMapper.getOne(id);
+
+  }
+
 }
