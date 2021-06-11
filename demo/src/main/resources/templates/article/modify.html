@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>게시판 -게시물 수정</title>
+  </head>
+  <link rel="stylesheet" href="/static/css/board.css" />
+  <body>
+    <h1>게시글 수정</h1>
+
+    <form action="./doModify" method="POST" onsubmit="submitAddForm(this);">
+      <input type="hidden" name="id" value="${article.id}" />
+      <div class="add__list__wrap">
+        <dl>
+          <dt>제목</dt>
+          <dd>
+            <input type="text" th:value="${article.title}" name="title" />
+          </dd>
+        </dl>
+
+        <dl>
+          <dt>내용</dt>
+          <dd>
+            <textarea
+              placeholder="내용"
+              name="body"
+              th:text="${article.body}"
+            ></textarea>
+          </dd>
+        </dl>
+
+        <ul class="list__button__wrap">
+          <li>
+            <input type="reset" value="취소" onclick="history.back();" />
+          </li>
+          <li>
+            <input type="submit" value="수정" />
+          </li>
+        </ul>
+      </div>
+    </form>
+  </body>
+
+  <script th:inline="javascript">
+    const submitAddForm = (form) => {
+      form.title.value = form.title.value.trim();
+      form.body.value = form.body.value.trim();
+
+      if (form.title.value.length === 0) {
+        alert("제목을 입력해주세요");
+        form.title.focus();
+      }
+      if (form.body.value.length === 0) {
+        alert("내용을 입력해주세요");
+        form.body.focus();
+      }
+    };
+  </script>
+</html>

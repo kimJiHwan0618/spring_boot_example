@@ -49,6 +49,19 @@ public class ArticleController {
 
   }
 
+  @RequestMapping("/article/modify")
+  public String doModify(Model model, long id) {
+
+    ArticleVO article = articleService.getOne(id);
+    
+
+    model.addAttribute("article", article);
+
+    return "article/modify";
+
+  }
+
+
   @RequestMapping("/article/doAdd")
   @ResponseBody
   public String doAdd(@RequestParam Map<String, Object> param) {
@@ -70,6 +83,25 @@ public class ArticleController {
     sb.append("</script>");
 
     return sb.toString();
+
+  }
+
+  @RequestMapping("/article/doModify")
+  @ResponseBody
+  public String doAdd(@RequestParam Map<String, Object> param) {
+    // long newId = articleService.addList(param);
+
+    // String msg =  newId + "번 게시글이 추가되었습니다.";
+
+    // StringBuilder sb = new StringBuilder();
+
+    // sb.append("alert('"+ msg +"');");
+    // sb.append("location.replace('./detail?id="+ newId +"')");
+    
+    // sb.insert(0,"<script>");
+    // sb.append("</script>");
+
+    // return sb.toString();
 
   }
 
