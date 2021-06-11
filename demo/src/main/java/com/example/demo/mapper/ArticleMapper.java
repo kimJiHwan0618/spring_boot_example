@@ -21,5 +21,7 @@ public interface ArticleMapper {
   public void delete(long id);
 
   public void listModify(Map<String, Object> param);
+
+  public void hitUp(long id);
   
 }

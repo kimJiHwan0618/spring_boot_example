@@ -20,20 +20,24 @@
       <li th:each="list : ${list}" class="board__list">
         <a th:href="@{/article/detail(id=${list.id})}">
           <dl>
-            <dt>ID :</dt>
+            <dt>아이디 :</dt>
             <dd th:text="${list.id}"></dd>
           </dl>
           <dl>
-            <dt>Date :</dt>
+            <dt>날짜 :</dt>
             <dd th:text="${list.regDate}"></dd>
           </dl>
           <dl>
-            <dt>Title :</dt>
+            <dt>제목 :</dt>
             <dd th:text="${list.title}"></dd>
           </dl>
           <dl>
-            <dt>Body :</dt>
+            <dt>내용 :</dt>
             <dd th:text="${list.body}"></dd>
+          </dl>
+          <dl>
+            <dt>조회수 :</dt>
+            <dd th:text="${list.hit}"></dd>
           </dl>
         </a>
       </li>

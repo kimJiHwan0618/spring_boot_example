@@ -35,6 +35,7 @@ public class ArticleController {
     
     ArticleVO article = articleService.getOne(id);
     
+    articleService.hitUp(id);
 
     model.addAttribute("article", article);
 
