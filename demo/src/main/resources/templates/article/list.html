@@ -18,22 +18,24 @@
 
     <ul class="board">
       <li th:each="list : ${list}" class="board__list">
-        <dl>
-          <dt>ID :</dt>
-          <dd th:text="${list.id}"></dd>
-        </dl>
-        <dl>
-          <dt>Date :</dt>
-          <dd th:text="${list.regDate}"></dd>
-        </dl>
-        <dl>
-          <dt>Title :</dt>
-          <dd th:text="${list.title}"></dd>
-        </dl>
-        <dl>
-          <dt>Body :</dt>
-          <dd th:text="${list.body}"></dd>
-        </dl>
+        <a th:href="@{/article/detail(id=${list.id})}">
+          <dl>
+            <dt>ID :</dt>
+            <dd th:text="${list.id}"></dd>
+          </dl>
+          <dl>
+            <dt>Date :</dt>
+            <dd th:text="${list.regDate}"></dd>
+          </dl>
+          <dl>
+            <dt>Title :</dt>
+            <dd th:text="${list.title}"></dd>
+          </dl>
+          <dl>
+            <dt>Body :</dt>
+            <dd th:text="${list.body}"></dd>
+          </dl>
+        </a>
       </li>
     </ul>
     <a href="add" class="add__link">게시글 추가</a>

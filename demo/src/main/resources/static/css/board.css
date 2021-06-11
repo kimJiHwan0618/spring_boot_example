@@ -33,6 +33,20 @@ dl {
   margin-bottom: 26px;
   background-color: rgb(245, 245, 245);
   box-shadow: 0 10px 20px rgb(0 0 0 / 6%), 0 6px 6px rgb(0 0 0 / 12%);
+  -webkit-transition: all 0.05s linear 0s;
+}
+.board .board__list > a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  -webkit-transition: all 0.05s linear 0s;
+}
+.board .board__list:hover {
+  background-color: rgb(33, 93, 221);
+  -webkit-transform: translateY(-6px);
+}
+.board .board__list:hover > a {
+  color: white;
 }
 
 .board .board__list dl {
