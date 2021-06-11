@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.example.demo.mapper.ArticleMapper;
 import com.example.demo.model.ArticleVO;
+import com.example.demo.util.Cutil;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,10 +28,7 @@ public class ArticleServiceImpl implements ArticleService {
   public long addList(Map<String, Object> param) {  
     articleMapper.addList(param);
 
-    BigInteger bigIntId = (BigInteger)param.get("id");
-    long newId = bigIntId.longValue();
-
-    return newId;
+    return Cutil.getAsLong(param.get("id"));
   }
 
 }
