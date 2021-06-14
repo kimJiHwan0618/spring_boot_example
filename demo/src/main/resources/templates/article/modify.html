@@ -68,12 +68,12 @@
       toolbar_mode: "floating",
       tinycomments_mode: "embedded",
       tinycomments_author: "Author name",
-      height: "400",
+      height: "700",
     });
 
     const submitAddForm = (form) => {
       form.title.value = form.title.value.trim();
-      form.body.value = form.body.value.trim();
+      form.body.value = tinymce.get("body").getContent();
 
       if (form.title.value.length === 0) {
         alert("제목을 입력해주세요");

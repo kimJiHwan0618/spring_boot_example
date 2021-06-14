@@ -25,6 +25,20 @@
     <div class="detail__body">
       <h2 class="detail__title" th:text="${article.title}"></h2>
       <div class="detail__body__inner"></div>
+
+      <div class="comment__wrap">
+        <h4><span>6개의 댓글</span></h4>
+        <form action="">
+          <div class="input__box">
+            <textarea
+              name=""
+              id="input__comment"
+              placeholder="댓글을 작성해보세요"
+            ></textarea>
+            <input type="submit" value="댓글 작성" />
+          </div>
+        </form>
+      </div>
     </div>
   </body>
   <script th:inline="javascript">
