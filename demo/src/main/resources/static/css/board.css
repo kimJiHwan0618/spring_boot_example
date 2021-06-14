@@ -149,3 +149,18 @@ dl {
   padding: 20px;
   box-sizing: border-box;
 }
+
+.detail__body {
+  width: 1300px;
+  padding: 50px 80px;
+  box-sizing: border-box;
+  margin: 50px auto;
+}
+.detail__body h2.detail__title {
+  font-size: 46px;
+  color: rgb(52, 58, 64);
+  margin-bottom: 46px;
+  padding: 26px 0;
+  border-bottom: 1px solid #999;
+  background-color: rgb(242, 242, 242);
+}
