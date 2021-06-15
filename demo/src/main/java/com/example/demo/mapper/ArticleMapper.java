@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.example.demo.model.ArticleVO;
+import com.example.demo.model.CommentVO;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -23,5 +24,7 @@ public interface ArticleMapper {
   public void listModify(Map<String, Object> param);
 
   public void hitUp(long id);
+
+  public List<CommentVO> getCommentList();
   
 }

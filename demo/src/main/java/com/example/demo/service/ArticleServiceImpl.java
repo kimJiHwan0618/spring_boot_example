@@ -1,24 +1,25 @@
 package com.example.demo.service;
 
-import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 
 import com.example.demo.mapper.ArticleMapper;
+import com.example.demo.mapper.CommentMapper;
 import com.example.demo.model.ArticleVO;
+import com.example.demo.model.CommentVO;
 import com.example.demo.util.Cutil;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import lombok.extern.slf4j.Slf4j;
 
 @Service
-@Slf4j
 public class ArticleServiceImpl implements ArticleService {
 
   @Autowired
   ArticleMapper articleMapper;
+  @Autowired
+  CommentMapper commentMapper;
 
   public List<ArticleVO> getList() {
     return articleMapper.getList();
@@ -64,4 +65,15 @@ public class ArticleServiceImpl implements ArticleService {
     articleMapper.hitUp(id);
   }
 
+  @Override
+  public List<CommentVO> getCommentList(long id) {
+    
+    return commentMapper.getCommentList(id);
+
+  }
+
+  @Override
+  public void addComment(Map<String, Object> param) {
+    commentMapper.addComment(param);
+  }
 }

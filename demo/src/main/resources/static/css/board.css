@@ -3,16 +3,30 @@
   padding: 0;
 }
 body {
+  padding-top: 145px;
+}
+.wrap {
+  width: 90%;
+  margin: 0 auto;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: white;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.05);
+}
+header h1 {
+  padding: 36px 0;
   width: 90%;
   margin: 0 auto;
 }
 
-h1 {
-  margin: 36px 0;
-}
-
 h2 {
   margin-bottom: 26px;
+  text-align: right;
 }
 
 ul,
@@ -151,12 +165,13 @@ dl {
 }
 
 .detail__body {
-  width: 1300px;
+  max-width: 1300px;
+  min-width: 900px;
   padding: 50px 80px;
   box-sizing: border-box;
   margin: 50px auto;
 }
-.detail__body h2.detail__title {
+.detail__body h3.detail__title {
   font-size: 46px;
   color: rgb(52, 58, 64);
   margin-bottom: 46px;
@@ -188,6 +203,10 @@ dl {
   box-sizing: border-box;
   padding: 20px;
   outline: none;
+  border: 1px solid rgb(233, 236, 239);
+}
+.comment__wrap .input__box textarea::placeholder {
+  color: rgb(162, 164, 167);
 }
 .comment__wrap .input__box input {
   width: 10%;
@@ -197,4 +216,87 @@ dl {
   background-color: rgb(18, 184, 134);
   border-radius: 4px;
   color: white;
+}
+
+.all__comment__list {
+  margin-top: 30px;
+}
+
+.all__comment__list .comment__list {
+  padding: 20px 0;
+  border-top: 1px solid rgb(233, 236, 239);
+}
+.all__comment__list .comment__list:nth-of-type(1) {
+  border-top: none;
+}
+
+.all__comment__list .comment__list .comment {
+  margin-bottom: 20px;
+}
+
+.all__comment__list .comment__list .comment dt {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.all__comment__list .comment__list .comment dt p.user__id,
+.all__comment__list
+  .comment__list
+  .reply__to__comment
+  .reply__list
+  .reply
+  dt
+  .user__id {
+  font-weight: bold;
+}
+.all__comment__list .comment__list .comment dt p.created__date,
+.all__comment__list
+  .comment__list
+  .reply__to__comment
+  .reply__list
+  .reply
+  dt
+  .created__date {
+  color: rgb(134, 142, 150);
+  font-size: 14px;
+}
+.all__comment__list .comment__list .comment dd {
+  margin: 20px 0;
+  line-height: 1.62;
+}
+.all__comment__list .comment__list .reply__btn {
+  color: rgb(18, 184, 134);
+  font-weight: bold;
+  cursor: pointer;
+}
+.all__comment__list .comment__list .reply__btn.on + .reply__to__comment {
+  display: block;
+}
+.all__comment__list .comment__list .reply__to__comment {
+  padding: 0 2%;
+  margin: 16px auto 0;
+  border: 1px solid rgb(237, 237, 237);
+  border-radius: 4px;
+  display: none;
+}
+
+.all__comment__list .comment__list .reply__to__comment .reply__list {
+  padding: 20px 0;
+  border-top: 1px solid rgb(233, 236, 239);
+}
+.all__comment__list
+  .comment__list
+  .reply__to__comment
+  .reply__list:nth-of-type(1) {
+  border-top: none;
+}
+.all__comment__list .comment__list .reply__to__comment .reply__list .reply dt {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.all__comment__list .comment__list .reply__to__comment .reply__list .reply dd {
+  line-height: 1.62;
+  margin: 16px 0 0px;
 }

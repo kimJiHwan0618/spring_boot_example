@@ -9,41 +9,106 @@
   </head>
   <link rel="stylesheet" href="/static/css/board.css" />
   <body>
-    <h1 id="test">상세 페이지</h1>
+    <header>
+      <h1>상세 페이지</h1>
+    </header>
 
-    <div class="detail__btn__wrap">
-      <a href="list">게시물 리스트</a>
-      <a href="add">게시물 추가</a>
-      <a th:href="@{./modify(id=${article.id})}">게시물 수정</a>
-      <a
-        onclick="if( confirm('삭제하시겠습니까?') == false ) return false;"
-        th:href="@{./doDelete(id=${article.id})}"
-        >게시물 삭제</a
-      >
-    </div>
+    <div class="wrap">
+      <div class="detail__btn__wrap">
+        <a href="list">게시물 리스트</a>
+        <a href="add">게시물 추가</a>
+        <a th:href="@{./modify(id=${article.id})}">게시물 수정</a>
+        <a
+          onclick="if( confirm('삭제하시겠습니까?') == false ) return false;"
+          th:href="@{./doDelete(id=${article.id})}"
+          >게시물 삭제</a
+        >
+      </div>
 
-    <div class="detail__body">
-      <h2 class="detail__title" th:text="${article.title}"></h2>
-      <div class="detail__body__inner"></div>
+      <div class="detail__body">
+        <h3 class="detail__title" th:text="${article.title}"></h3>
 
-      <div class="comment__wrap">
-        <h4><span>6개의 댓글</span></h4>
-        <form action="">
-          <div class="input__box">
-            <textarea
-              name=""
-              id="input__comment"
-              placeholder="댓글을 작성해보세요"
-            ></textarea>
-            <input type="submit" value="댓글 작성" />
-          </div>
-        </form>
+        <div class="detail__body__inner"></div>
+
+        <!-- comment__wrap -->
+        <div class="comment__wrap">
+          <form
+            th:action="@{/article/detail(id=${article.id})/commentAdd}"
+            method="POST"
+            onsubmit="submitComment(this)"
+          >
+            <input type="hidden" name="userId" />
+            <input type="hidden" name="id" />
+            <h4><span>2개의 댓글</span></h4>
+
+            <!-- 댓글입력 -->
+            <div class="input__box">
+              <textarea
+                name="comment"
+                id="input__comment"
+                placeholder="댓글을 작성해보세요"
+              ></textarea>
+              <input type="submit" value="댓글 작성" />
+            </div>
+            <!-- // 댓글입력 -->
+
+            <!-- all__comment__list -->
+            <div class="all__comment__list">
+              <!-- 첫번째 댓글 -->
+              <article
+                class="comment__list"
+                th:each="commentList : ${commentList}"
+              >
+                <dl class="comment">
+                  <dt>
+                    <p class="user__id" th:text="${commentList.userId}">
+                      alex0618
+                    </p>
+                    <p class="created__date" th:text="${commentList.regDate}">
+                      2021-06-14 18:30:59
+                    </p>
+                  </dt>
+                  <dd th:text="${commentList.contents}"></dd>
+                </dl>
+              </article>
+              <!-- // 첫번째 댓글 -->
+            </div>
+            <!-- // all__comment__list -->
+          </form>
+        </div>
+        <!-- //comment__wrap -->
       </div>
     </div>
   </body>
   <script th:inline="javascript">
+    console.log([[${commentList}]])
+    console.log([[${param}]])
+
     const detailBody = document.getElementsByClassName("detail__body__inner");
 
     detailBody[0].innerHTML = [[${article}]].body
+
+    const randomIdArr = ["alex0618","json222","youngmee2523","suzna0002","wlghks0618","gauujmm11","zxczxcasd1","asdsadas8","zxczxcww3","adva22","opvbxcvds"]
+
+    const submitComment = (form) => {
+
+      const randomId = randomIdArr[Math.floor(Math.random() * 10)];
+      // id
+      // const nowDate = () => {
+      //   let newDate = new Date();
+      //   let year = newDate.getFullYear()
+      //   let month = newDate.getMonth()+1
+      //   let day = newDate.getDate()
+      //   let DateString = year +'년 ' + month +'월 ' + day + '일'
+
+      //   return DateString;
+      // }
+      // 현재시간
+
+      form.comment.value = form.comment.value.trim();
+      // form.createdTime.value = nowDate();
+      form.userId.value = randomId;
+      form.id.value = [[${article}]].id;
+    }
   </script>
 </html>

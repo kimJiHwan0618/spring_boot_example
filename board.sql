@@ -20,5 +20,21 @@ UPDATE article
 SET hit = hit + 1
 WHERE id = 6
 
-
 ALTER TABLE article ADD hit INT(10) UNSIGNED NOT NULL DEFAULT '0' 
+
+USE demo;
+
+SELECT *
+FROM comment;
+
+DELETE FROM comment
+WHERE userId='alex123';
+
+INSERT INTO comment
+SET regDate = NOW(),
+id = 96,
+userId = 'ㅎㅇㅎㅇㅎㅇ',
+contents = 'ㅎㅇㅎㅇㅎㅇ'
+		
+		
+

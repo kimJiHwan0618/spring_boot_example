@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.example.demo.model.ArticleVO;
+import com.example.demo.model.CommentVO;
 import com.example.demo.service.ArticleService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ public class ArticleController {
 
   @RequestMapping("/article/list")
   public String main(Model model) {
+
     List<ArticleVO> list = articleService.getList();
     int totalCount = articleService.getTotalCount();
 
@@ -34,13 +36,29 @@ public class ArticleController {
   public String showDetail(Model model, long id) {
     
     ArticleVO article = articleService.getOne(id);
-    
+    List<CommentVO> commentList = articleService.getCommentList(id);
+    // articleService.addComment(param);
+
     articleService.hitUp(id);
 
+    long testId = id;
+
     model.addAttribute("article", article);
+    model.addAttribute("commentList", commentList);
+    model.addAttribute("testId", testId);
 
     return "article/detail";
 
+  }
+
+  @RequestMapping("/article/detail/commentAdd")
+  public String commentAdd(Model model, @RequestParam Map<String, Object> param) {
+
+    Object test = param;
+
+    model.addAttribute("param", test);
+
+    return "article/detail";
   }
 
   @RequestMapping("/article/add")
