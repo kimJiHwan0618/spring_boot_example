@@ -35,6 +35,8 @@ SET regDate = NOW(),
 id = 96,
 userId = 'ㅎㅇㅎㅇㅎㅇ',
 contents = 'ㅎㅇㅎㅇㅎㅇ'
+
+DELETE FROM article WHERE ID = 96
 		
 		
 

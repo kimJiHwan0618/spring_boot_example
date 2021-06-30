@@ -18,7 +18,7 @@
 		WHERE id = #{id}
 	</select>	
 
-	<delete id="delete" parameterType="long">
+	<delete id="delete" parameterType="long" >
 		DELETE FROM article
 		where ID = #{id}
 	</delete>

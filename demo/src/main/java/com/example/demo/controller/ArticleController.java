@@ -51,7 +51,7 @@ public class ArticleController {
 
   }
 
-  @RequestMapping("/article/detail/commentAdd")
+  @RequestMapping("/article/commentAdd")
   public String commentAdd(Model model, @RequestParam Map<String, Object> param) {
 
     Object test = param;
