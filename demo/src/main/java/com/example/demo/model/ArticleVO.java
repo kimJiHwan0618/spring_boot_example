@@ -15,6 +15,6 @@ public class ArticleVO {
   private String title;
   private String body;
   private long hit;
-  private List<CommentVO> comment;
+  // private List<CommentVO> comment;
 }
 
