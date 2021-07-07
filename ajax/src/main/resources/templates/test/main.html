@@ -8,7 +8,39 @@
     <title>ajax_test main</title>
   </head>
   <link rel="stylesheet" href="/static/css/ajax.css" />
-  <body></body>
+  <body>
+    <h1 class="f__midium">ajax text 페이지 입니다.</h1>
+    <main>
+      <article class="list__components__wrap">
+        <!-- // list -->
+        <div class="list" th:each="list : ${list}">
+          <div class="list__top">
+            <dl>
+              <dt>아이디&nbsp;&nbsp;:&nbsp;&nbsp;</dt>
+              <dd class="f__midium" th:text="${list.id}"></dd>
+            </dl>
+            <p class="f__midium" th:text="${list.regDate}"></p>
+          </div>
+          <dl>
+            <dt class="f__midium" th:text="${list.title}"></dt>
+            <dd class="content" th:text="${list.body}"></dd>
+          </dl>
+          <div class="button__wrap">
+            <button class="f__midium">삭제</button>
+            <button class="f__midium">수정</button>
+          </div>
+        </div>
+        <!-- // list -->
+        <div class="list__wrap__state">
+          <dl>
+            <dt>Total&nbsp;&nbsp;:&nbsp;&nbsp;</dt>
+            <dd th:text="${#lists.size(list)}" class="f__bold"></dd>
+          </dl>
+          <button class="f__bold">추가</button>
+        </div>
+      </article>
+    </main>
+  </body>
   <script th:inline="javascript">
     console.log([[${list}]]);
   </script>
