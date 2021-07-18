@@ -21,6 +21,10 @@ dependencies {
 	runtimeOnly 'mysql:mysql-connector-java'
 	compileOnly 'org.projectlombok:lombok' // 추가
 	annotationProcessor 'org.projectlombok:lombok' // 추가
+	compileOnly 'org.projectlombok:lombok:1.18.20' // STS에 추가
+	annotationProcessor 'org.projectlombok:lombok:1.18.20' // STS에 추가 
+	testCompileOnly 'org.projectlombok:lombok:1.18.20' // STS에 추가
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.20' // STS에 추가
 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'

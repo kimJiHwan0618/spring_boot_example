@@ -1,9 +1,11 @@
 package com.ajaxdemo.ajax.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.ajaxdemo.ajax.mapper.ArticleMapper;
 import com.ajaxdemo.ajax.model.ArticleVO;
+import com.ajaxdemo.ajax.util.Cutil;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,13 @@ public class ArticleServiceImpl implements ArticleService {
 
   public List<ArticleVO> getList() {
     return articleMapper.getList();
+  }
+  
+  @Override
+  public long addList(Map<String, Object> param) {  
+    articleMapper.addList(param);
+
+    return Cutil.getAsLong(param.get("id"));
   }
   
 }

@@ -6,4 +6,11 @@
 		SELECT *
 		FROM article 
 	</select>
+	
+	<insert id="addList" parameterType="map" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO article
+		SET regDate = NOW(),
+		title = #{title},
+		body = #{body}
+	</insert>
 </mapper>

@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>ajax_test main</title>
   </head>
-  <link rel="stylesheet" href="/static/css/ajax.css" />
+  <link rel="stylesheet" href="/static/css/ajax.css" /> 
   <body>
     <h1 class="f__midium">ajax text 페이지 입니다.</h1>
     <main>
@@ -36,12 +36,14 @@
             <dt>Total&nbsp;&nbsp;:&nbsp;&nbsp;</dt>
             <dd th:text="${#lists.size(list)}" class="f__bold"></dd>
           </dl>
-          <button class="f__bold">추가</button>
+          <button th:onclick="fn_popupToggle()" class="f__bold">추가</button>
         </div>
+		<th:block th:replace="fragments/addListPopup :: addListFragment"></th:block>
       </article>
     </main>
   </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="/static/js/common.js"></script>
   <script th:inline="javascript">
-    console.log([[${list}]]);
   </script>
 </html>
