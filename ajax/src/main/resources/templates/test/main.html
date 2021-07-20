@@ -7,30 +7,32 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>ajax_test main</title>
   </head>
-  <link rel="stylesheet" href="/static/css/ajax.css" /> 
+  <link rel="stylesheet" href="/static/css/ajax.css" />
   <body>
     <h1 class="f__midium">ajax text 페이지 입니다.</h1>
     <main>
       <article class="list__components__wrap">
         <!-- // list -->
-        <div class="list" th:each="list : ${list}">
-          <div class="list__top">
+        <div id="listWrap">
+          <div class="list" th:each="list : ${list}">
+            <div class="list__top">
+              <dl>
+                <dt>아이디&nbsp;&nbsp;:&nbsp;&nbsp;</dt>
+                <dd class="f__midium" th:text="${list.id}"></dd>
+              </dl>
+              <p class="f__midium" th:text="${list.regDate}"></p>
+            </div>
             <dl>
-              <dt>아이디&nbsp;&nbsp;:&nbsp;&nbsp;</dt>
-              <dd class="f__midium" th:text="${list.id}"></dd>
+              <dt class="f__midium" th:text="${list.title}"></dt>
+              <dd class="content" th:text="${list.body}"></dd>
             </dl>
-            <p class="f__midium" th:text="${list.regDate}"></p>
+            <div class="button__wrap">
+              <button class="f__midium">삭제</button>
+              <button class="f__midium">수정</button>
+            </div>
           </div>
-          <dl>
-            <dt class="f__midium" th:text="${list.title}"></dt>
-            <dd class="content" th:text="${list.body}"></dd>
-          </dl>
-          <div class="button__wrap">
-            <button class="f__midium">삭제</button>
-            <button class="f__midium">수정</button>
-          </div>
+          <!-- // list -->
         </div>
-        <!-- // list -->
         <div class="list__wrap__state">
           <dl>
             <dt>Total&nbsp;&nbsp;:&nbsp;&nbsp;</dt>
@@ -38,12 +40,16 @@
           </dl>
           <button th:onclick="fn_popupToggle()" class="f__bold">추가</button>
         </div>
-		<th:block th:replace="fragments/addListPopup :: addListFragment"></th:block>
+        <th:block
+          th:replace="fragments/addListPopup :: addListFragment"
+        ></th:block>
       </article>
     </main>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="/static/js/common.js"></script>
   <script th:inline="javascript">
+    console.log('gdgdgdgdg')
+    console.log([[${list}]])
   </script>
 </html>

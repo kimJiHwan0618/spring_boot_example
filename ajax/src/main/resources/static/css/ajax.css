@@ -40,7 +40,7 @@ h1 {
 }
 
 /* modal__bg, popup*/
-.add__popup{
+.add__popup {
   position: fixed;
   left: 0;
   top: 0;
@@ -48,18 +48,18 @@ h1 {
   height: 100%;
   display: none;
 }
-.add__popup.active{
+.add__popup.active {
   display: block;
 }
-.add__popup .modal__bg{
+.add__popup .modal__bg {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
 }
-.add__popup .form__wrap{
+.add__popup .form__wrap {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -72,7 +72,7 @@ h1 {
   padding: 10px;
 }
 .add__popup .form__wrap > form > input,
-.add__popup .form__wrap textarea{
+.add__popup .form__wrap textarea {
   width: 90%;
   margin: 0 auto;
   display: block;
@@ -80,22 +80,22 @@ h1 {
   resize: none;
   outline: none;
 }
-.add__popup .form__wrap input{
+.add__popup .form__wrap input {
   height: 30px;
 }
 .add__popup .form__wrap textarea {
   height: 100px;
-  margin: 30px auto;	
+  margin: 30px auto;
 }
-.add__popup .form__wrap .button__wrap{
+.add__popup .form__wrap .button__wrap {
   width: 90%;
-  margin: 0px auto; 
+  margin: 0px auto;
   text-align: right;
   display: flex;
   justify-content: space-between;
 }
 .add__popup .form__wrap .button__wrap span,
-.add__popup .form__wrap .button__wrap input{
+.add__popup .form__wrap .button__wrap input {
   display: inline-block;
   text-align: center;
   height: 40px;
@@ -120,7 +120,7 @@ main .list__components__wrap {
   width: 50%;
   margin: 0 auto;
 }
-main .list__components__wrap > .list {
+main .list__components__wrap > #listWrap > .list {
   width: 100%;
   min-width: 300px;
   padding: 20px;
@@ -130,54 +130,64 @@ main .list__components__wrap > .list {
   box-shadow: 0 39px 67px 3px hsl(0deg 0% 68% / 30%);
   margin-bottom: 40px;
 }
-main .list__components__wrap > .list > .list__top {
+main .list__components__wrap > #listWrap > .list > .list__top {
   display: flex;
   justify-content: space-between;
 }
-main .list__components__wrap > .list > .list__top dl {
+main .list__components__wrap > #listWrap > .list > .list__top dl {
   display: flex;
   align-items: baseline;
 }
-main .list__components__wrap > .list > .list__top dl dd {
+main .list__components__wrap > #listWrap > .list > .list__top dl dd {
   font-size: 18px;
   color: rgb(109, 109, 109);
 }
-main .list__components__wrap > .list > .list__top dl dt {
+main .list__components__wrap > #listWrap > .list > .list__top dl dt {
   font-size: 22px;
   color: rgb(211, 211, 211);
   font-size: 12px;
 }
-main .list__components__wrap > .list p {
+main .list__components__wrap > #listWrap > .list p {
   color: rgb(211, 211, 211);
   font-size: 12px;
 }
-main .list__components__wrap > .list > dl {
+main .list__components__wrap > #listWrap > .list > dl {
   padding: 20px 0;
   margin-top: 20px;
   border-top: 1px solid rgb(223, 223, 223);
 }
-main .list__components__wrap > .list > dl dt {
+main .list__components__wrap > #listWrap > .list > dl dt {
   font-size: 18px;
 }
-main .list__components__wrap > .list > dl dd {
+main .list__components__wrap > #listWrap > .list > dl dd {
   margin-top: 14px;
   color: rgb(89, 89, 89);
 }
-main .list__components__wrap > .list > .button__wrap {
+main .list__components__wrap > #listWrap > .list > .button__wrap {
   display: flex;
   justify-content: flex-end;
 }
-main .list__components__wrap > .list > .button__wrap button {
+main .list__components__wrap > #listWrap > .list > .button__wrap button {
   border: none;
   color: white;
   border-radius: 4px;
   padding: 6px 12px;
   cursor: pointer;
 }
-main .list__components__wrap > .list > .button__wrap button:first-of-type {
+main
+  .list__components__wrap
+  > #listWrap
+  > .list
+  > .button__wrap
+  button:first-of-type {
   background: rgb(214, 82, 82);
 }
-main .list__components__wrap > .list > .button__wrap button:last-of-type {
+main
+  .list__components__wrap
+  > #listWrap
+  > .list
+  > .button__wrap
+  button:last-of-type {
   margin-left: 9px;
   background: rgb(60, 191, 67);
 }

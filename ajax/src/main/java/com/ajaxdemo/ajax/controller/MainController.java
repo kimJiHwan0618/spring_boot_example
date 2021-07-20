@@ -23,7 +23,7 @@ public class MainController {
     public String testMain(Model model) {
 
       List<ArticleVO> list = articleService.getList();
-
+      System.out.print(list);
       model.addAttribute("list", list);
 
     return "test/main";
@@ -32,13 +32,14 @@ public class MainController {
   
   @RequestMapping("/test/doAdd")
   @ResponseBody
-  public String doAdd(@RequestParam Map<String, Object> param) {
+  public Object doAdd(@RequestParam Map<String, Object> param,Model model) {
 	  
 //	  long newId = articleService.addList(param);
 	  
 	  articleService.addList(param);
-	  
-	  return "성공";
+//	  model.addAttribute("addList", param);
+    
+	  return articleService.getList();
 	  
   }
   
