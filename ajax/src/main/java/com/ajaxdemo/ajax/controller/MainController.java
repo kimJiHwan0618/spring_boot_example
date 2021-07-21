@@ -32,7 +32,7 @@ public class MainController {
   
   @RequestMapping("/test/doAdd")
   @ResponseBody
-  public Object doAdd(@RequestParam Map<String, Object> param,Model model) {
+  public Object doAdd(@RequestParam Map<String, Object> param) {
 	  
 //	  long newId = articleService.addList(param);
 	  
