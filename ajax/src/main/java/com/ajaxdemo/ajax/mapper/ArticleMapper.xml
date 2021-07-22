@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?> 
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.ajaxdemo.ajax.mapper.ArticleMapper">
 	<select id="getList" parameterType="map" resultType="ArticleVO">
 		SELECT *
-		FROM article 
+		FROM article
 	</select>
-	
-	<insert id="addList" parameterType="map" useGeneratedKeys="true" keyProperty="id">
+
+	<insert id="addList" parameterType="map" useGeneratedKeys="true"
+		keyProperty="id">
 		INSERT INTO article
 		SET regDate = NOW(),
 		title = #{title},
 		body = #{body}
 	</insert>
+
+	<delete id="delete" parameterType="long">
+		DELETE FROM article
+		where ID = #{id}
+	</delete>
+
+	<update id="listModify" parameterType="map">
+		UPDATE article
+		SET title = #{title},
+		body = #{body}
+		WHERE id = #{id}
+	</update>
 </mapper>

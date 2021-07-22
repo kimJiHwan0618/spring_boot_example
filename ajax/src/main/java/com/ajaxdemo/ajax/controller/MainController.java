@@ -34,13 +34,31 @@ public class MainController {
   @ResponseBody
   public Object doAdd(@RequestParam Map<String, Object> param) {
 	  
-//	  long newId = articleService.addList(param);
 	  
 	  articleService.addList(param);
-//	  model.addAttribute("addList", param);
     
 	  return articleService.getList();
 	  
+  }
+  
+  @RequestMapping("/test/doDelete")
+  @ResponseBody
+  public String doDelete(long id) {
+
+    articleService.delete(id);
+
+    return "삭제 성공!";
+
+  }
+
+  @RequestMapping("/test/doModify")
+  @ResponseBody
+  public String doModify(@RequestParam Map<String, Object> param, long id) {
+
+    articleService.listModify(param);
+
+    return "수정 성공!";
+
   }
   
 }

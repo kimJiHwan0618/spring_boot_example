@@ -27,5 +27,18 @@ public class ArticleServiceImpl implements ArticleService {
     return Cutil.getAsLong(param.get("id"));
   }
   
+  @Override
+  public void delete(long id) {  
+
+   articleMapper.delete(id);
+
+  }
+
+  @Override
+  public void listModify(Map<String, Object> param) {  
+
+   articleMapper.listModify(param);
+   
+  }
 }
 

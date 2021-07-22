@@ -14,4 +14,7 @@ public interface ArticleMapper {
   
   public void addList(Map<String, Object> param);
   
+  public void delete(long id);
+
+  public void listModify(Map<String, Object> param);
 }

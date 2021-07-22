@@ -1,43 +1,55 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>ajax_test main</title>
+  </head>
+  <link rel="stylesheet" href="/static/css/ajax.css" />
 
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>ajax_test main</title>
-</head>
-<link rel="stylesheet" href="/static/css/ajax.css" />
-
-<body>
-	<h1 class="f__midium">ajax text 페이지 입니다.</h1>
-	<main>
-		<article class="list__components__wrap">
-			<!-- // list -->
-			<div id="listWrap">
-				<div class="list" th:each="list : ${list}">
-					<div class="list__top">
-						<dl>
-							<dt>아이디:</dt>
-							<dd class="f__midium" th:text="${list.id}"></dd>
-						</dl>
-						<p class="f__midium" th:text="${list.regDate}"></p>
-					</div>
-					<dl>
-						<dt class="f__midium" th:text="${list.title}"></dt>
-						<dd class="content" th:text="${list.body}"></dd>
-					</dl>
-					<div class="button__wrap">
-						<button class="f__midium">삭제</button>
-						<button class="f__midium">수정</button>
-					</div>
-				</div>
-				<!-- // list -->
-			</div>
-			<div class="list__wrap__state">
-				<dl>
-					<dt>Total&nbsp;&nbsp;:&nbsp;&nbsp;</dt>
-					<dd th:text="${#lists.size(list)}" class="f__bold"></dd>
+  <body>
+    <h1 class="f__midium">ajax text 페이지 입니다.</h1>
+    <main>
+      <article class="list__components__wrap">
+        <!-- // list -->
+        <div id="listWrap">
+          <div class="list" th:each="list : ${list}">
+            <div class="list__top">
+              <dl>
+                <dt>아이디:</dt>
+                <dd class="f__midium" th:text="${list.id}"></dd>
+              </dl>
+              <p class="f__midium" th:text="${list.regDate}"></p>
+            </div>
+            <dl>
+              <dt class="f__midium" th:text="${list.title}"></dt>
+              <dd class="content" th:text="${list.body}"></dd>
+            </dl>
+            <div class="button__wrap">
+              <button class="f__midium" th:onclick="fn_listDelete(this)">
+                삭제
+              </button>
+              <button class="f__midium" th:onclick="fn_listModify(this)">
+                수정
+              </button>
+            </div>
+          </div>
+          <!-- // list -->
+        </div>
+        <div class="list__wrap__state">
+          <dl>
+            <dt>Total&nbsp;&nbsp;:&nbsp;&nbsp;</dt>
+            <dd
+              id="listLength"
+              th:text="${#lists.size(list)}"
+              class="f__bold"
+            ></dd>
           </dl>
-          <button th:onclick="fn_popupToggle()" class="f__bold">추가</button>
+          <button th:onclick="fn_popupToggle('addBtn')" class="f__bold">
+            추가
+          </button>
         </div>
         <th:block
           th:replace="fragments/addListPopup :: addListFragment"
@@ -46,26 +58,6 @@
     </main>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="/static/js/common.js"></script>
-  <script th:inline="javascript">
-	const el1 = document.createElement('div')
-	const el2 = document.createElement('div')
-	const el3 = document.createElement('dl')
-	const el4 = document.createElement('dt')
-	const el5 = document.createElement('dd')
-	const el6 = document.createElement('p')
-	el4.innerText = '아이디&nbsp;&nbsp;:&nbsp;&nbsp;'
-	el5.innerText = test
-	el6.innerText = test
-	el1.className = 'list'
-	el2.className = 'list__top'
-	el5.className = 'f__midium'
-	el6.className = 'f__midium'
-	el1.appendChild(el2)
-	el2.appendChild(el3)
-	el2.appendChild(el6)
-	el3.appendChild(el4)
-	el3.appendChild(el5)
-	console.log(el1)
-</script>
+  <script th:src="@{/static/js/callbackAjax.js}"></script>
+  <script th:src="@{/static/js/crudBasic.js}"></script>
 </html>
