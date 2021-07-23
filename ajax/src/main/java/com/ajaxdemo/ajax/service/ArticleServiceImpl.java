@@ -37,8 +37,15 @@ public class ArticleServiceImpl implements ArticleService {
   @Override
   public void listModify(Map<String, Object> param) {  
 
-   articleMapper.listModify(param);
+    articleMapper.listModify(param);
    
+  }
+
+  @Override
+  public ArticleVO getOne(long id) {  
+
+    return articleMapper.getOne(id);
+
   }
 }
 

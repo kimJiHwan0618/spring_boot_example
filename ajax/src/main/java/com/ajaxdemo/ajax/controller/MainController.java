@@ -53,11 +53,13 @@ public class MainController {
 
   @RequestMapping("/test/doModify")
   @ResponseBody
-  public String doModify(@RequestParam Map<String, Object> param, long id) {
+  public Object doModify(@RequestParam Map<String, Object> param, long id, Model model) {
 
     articleService.listModify(param);
+    ArticleVO article = articleService.getOne(id);
+    model.addAttribute("article", article);
 
-    return "수정 성공!";
+    return article;
 
   }
   

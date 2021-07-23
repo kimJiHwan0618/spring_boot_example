@@ -40,7 +40,7 @@ h1 {
 }
 
 /* modal__bg, popup*/
-.add__popup {
+.list__popup {
   position: fixed;
   left: 0;
   top: 0;
@@ -48,10 +48,10 @@ h1 {
   height: 100%;
   display: none;
 }
-.add__popup.active {
+.list__popup.active {
   display: block;
 }
-.add__popup .modal__bg {
+.list__popup .modal__bg {
   position: absolute;
   left: 0;
   top: 0;
@@ -59,7 +59,7 @@ h1 {
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
 }
-.add__popup .form__wrap {
+.list__popup .form__wrap {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -71,8 +71,8 @@ h1 {
   box-sizing: border-box;
   padding: 10px;
 }
-.add__popup .form__wrap > form > input,
-.add__popup .form__wrap textarea {
+.list__popup .form__wrap > form > input,
+.list__popup .form__wrap textarea {
   width: 90%;
   margin: 0 auto;
   display: block;
@@ -80,22 +80,22 @@ h1 {
   resize: none;
   outline: none;
 }
-.add__popup .form__wrap input {
+.list__popup .form__wrap input {
   height: 30px;
 }
-.add__popup .form__wrap textarea {
+.list__popup .form__wrap textarea {
   height: 100px;
   margin: 30px auto;
 }
-.add__popup .form__wrap .button__wrap {
+.list__popup .form__wrap .button__wrap {
   width: 90%;
   margin: 0px auto;
   text-align: right;
   display: flex;
   justify-content: space-between;
 }
-.add__popup .form__wrap .button__wrap span,
-.add__popup .form__wrap .button__wrap input {
+.list__popup .form__wrap .button__wrap span,
+.list__popup .form__wrap .button__wrap input {
   display: inline-block;
   text-align: center;
   height: 40px;

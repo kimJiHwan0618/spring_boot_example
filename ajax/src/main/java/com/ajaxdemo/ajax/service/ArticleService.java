@@ -14,5 +14,7 @@ public interface ArticleService {
   public void delete(long id);
   
   public void listModify(Map<String, Object> param);
+
+  public ArticleVO getOne(long id);
   
 }

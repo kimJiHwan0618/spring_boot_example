@@ -11,6 +11,7 @@ const ajaxListAdd = (title, body) => {
     },
     dataType: "text",
     success: function (data, status, xhr) {
+      console.log(data);
       const updateListArr = JSON.parse(data);
       const addList = updateListArr[updateListArr.length - 1];
 
@@ -89,18 +90,20 @@ const ajaxListDelete = (listId, listEl) => {
   });
 };
 
-const ajaxListModify = (listId, listEl) => {
+const ajaxListModify = (listTitle, listBody, listId, listEl) => {
   $.ajax({
     url: `./doModify`,
     type: "post",
     data: {
-      title: title,
-      body: body,
+      title: listTitle,
+      body: listBody,
       id: listId,
     },
     success: function (data, status, xhr) {
-      listEl.remove();
-      listLengthText.innerText = listAllEl.children.length;
+      console.log(data);
+      listEl.children[1].children[0].innerText = data.title;
+      listEl.children[1].children[1].innerText = data.body;
+      listEl.children[0].children[1].innerText = data.regDate;
     },
     error: function (error) {
       console.log(error);

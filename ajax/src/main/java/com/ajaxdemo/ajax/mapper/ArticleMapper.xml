@@ -23,7 +23,14 @@
 	<update id="listModify" parameterType="map">
 		UPDATE article
 		SET title = #{title},
-		body = #{body}
+		body = #{body},
+		regDate = NOW()
 		WHERE id = #{id}
 	</update>
+
+	<select id="getOne" parameterType="map" resultType="ArticleVO">
+		SELECT *
+		FROM article
+		WHERE id = #{id}
+	</select>	
 </mapper>

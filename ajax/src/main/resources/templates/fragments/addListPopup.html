@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
   <th:block th:fragment="addListFragment">
-    <div class="add__popup">
+    <div class="list__popup">
       <div class="modal__bg" th:onclick="fn_popupToggle()"></div>
       <div class="form__wrap">
         <form id="listForm" onsubmit="fn_listSubmit(this); return false;">
@@ -9,7 +9,7 @@
           <textarea name="body" placeholder="내용을 입력하세요"></textarea>
           <div class="button__wrap">
             <span th:onclick="fn_popupToggle()">취소</span>
-            <input id="popupBtnEl" type="submit" value="추가" />
+            <input id="popupBtnEl" type="submit" name="button" value="추가" />
           </div>
         </form>
       </div>
