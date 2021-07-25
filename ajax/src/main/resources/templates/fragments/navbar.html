@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <nav class="mainNavBar" th:fragment="navbarFragment">
+    <ul>
+      <li
+        th:classappend="${#httpServletRequest.getRequestURI() == '/' ? 'on':''}"
+      >
+        <a class="f__bold" th:href="@{/}">
+          <span class="icon"></span>
+          <span class="text">Home</span>
+        </a>
+      </li>
+      <li
+        th:classappend="${#httpServletRequest.getRequestURI() == '/mysql' ? 'on':''}"
+      >
+        <a class="f__bold" th:href="@{/mysql}">
+          <span class="icon"></span>
+          <span class="text">Mysql</span>
+        </a>
+      </li>
+      <li
+        th:classappend="${#httpServletRequest.getRequestURI() == '/security' ? 'on':''}"
+      >
+        <a class="f__bold" th:href="@{#}">
+          <span class="icon"></span>
+          <span class="text">Security</span>
+        </a>
+      </li>
+      <li
+        th:classappend="${#httpServletRequest.getRequestURI() == '/service' ? 'on':''}"
+      >
+        <a class="f__bold" th:href="@{#}">
+          <span class="icon"></span>
+          <span class="text">Service</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</html>

@@ -3,7 +3,7 @@ const listLengthText = document.querySelector("#listLength");
 
 const ajaxListAdd = (title, body) => {
   $.ajax({
-    url: "./doAdd",
+    url: "/doAdd",
     type: "post",
     data: {
       title: title,
@@ -75,7 +75,7 @@ const ajaxListAdd = (title, body) => {
 
 const ajaxListDelete = (listId, listEl) => {
   $.ajax({
-    url: `./doDelete`,
+    url: `/doDelete`,
     type: "post",
     data: {
       id: listId,
@@ -92,7 +92,7 @@ const ajaxListDelete = (listId, listEl) => {
 
 const ajaxListModify = (listTitle, listBody, listId, listEl) => {
   $.ajax({
-    url: `./doModify`,
+    url: `/doModify`,
     type: "post",
     data: {
       title: listTitle,

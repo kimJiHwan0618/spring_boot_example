@@ -14,23 +14,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class MainController {
+public class HomeController {
 
   @Autowired
   ArticleService articleService;
 
-  @RequestMapping("test/main")
-    public String testMain(Model model) {
 
-      List<ArticleVO> list = articleService.getList();
-      System.out.print(list);
-      model.addAttribute("list", list);
-
-    return "test/main";
-    
-  }
-  
-  @RequestMapping("/test/doAdd")
+  @RequestMapping("/doAdd")
   @ResponseBody
   public Object doAdd(@RequestParam Map<String, Object> param) {
 	  
@@ -40,8 +30,9 @@ public class MainController {
 	  return articleService.getList();
 	  
   }
+  // 리스트 추가
   
-  @RequestMapping("/test/doDelete")
+  @RequestMapping("/doDelete")
   @ResponseBody
   public String doDelete(long id) {
 
@@ -50,8 +41,9 @@ public class MainController {
     return "삭제 성공!";
 
   }
+  // 리스트 삭제
 
-  @RequestMapping("/test/doModify")
+  @RequestMapping("/doModify")
   @ResponseBody
   public Object doModify(@RequestParam Map<String, Object> param, long id, Model model) {
 
@@ -62,5 +54,5 @@ public class MainController {
     return article;
 
   }
-  
+  // 리스트 수정
 }

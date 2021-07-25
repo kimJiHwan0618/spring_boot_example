@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html
   xmlns:th="http://www.thymeleaf.org"
-  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorator="layouts/layout"
 >
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>ajax_test main</title>
-  </head>
-  <link rel="stylesheet" href="/static/css/ajax.css" />
-
-  <body>
-    <h1 class="f__midium">ajax text 페이지 입니다.</h1>
+  <div layout:fragment="content">
     <main>
       <article class="list__components__wrap">
-        <!-- // list -->
         <div id="listWrap">
           <div class="list" th:each="list : ${list}">
             <div class="list__top">
@@ -36,7 +29,6 @@
               </button>
             </div>
           </div>
-          <!-- // list -->
         </div>
         <div class="list__wrap__state">
           <dl>
@@ -47,7 +39,11 @@
               class="f__bold"
             ></dd>
           </dl>
-          <button th:onclick="fn_popupToggle('addBtn')" class="f__bold">
+          <button
+            id="listAddBtn"
+            th:onclick="fn_popupToggle('addBtn')"
+            class="f__bold"
+          >
             추가
           </button>
         </div>
@@ -56,8 +52,10 @@
         ></th:block>
       </article>
     </main>
-  </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script th:src="@{/static/js/callbackAjax.js}"></script>
-  <script th:src="@{/static/js/crudBasic.js}"></script>
+    <script th:src="@{/static/js/callbackAjax.js}"></script>
+    <script th:src="@{/static/js/crudBasic.js}"></script>
+  </div>
+  <!-- <th:block layout:fragment="css"> </th:block>
+
+  <th:block layout:fragment="script"> </th:block> -->
 </html>

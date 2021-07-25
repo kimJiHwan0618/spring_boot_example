@@ -17,6 +17,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.1' //@Mapper 사용
+	implementation group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '2.4.1' // thymeleaf-layout-dialect 라이브러리 사용
 	runtimeOnly 'com.microsoft.sqlserver:mssql-jdbc'
 	runtimeOnly 'mysql:mysql-connector-java'
 	compileOnly 'org.projectlombok:lombok' // 추가

@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap");
+@import "./reset.css";
+@import "./navbar.css";
+@import "./common.css";
+@import "./crubbasic.css";
+@font-face {
+  font-family: "NotoSansKR-Bold";
+  src: url(../font/NotoSansKR-Bold.otf);
+}
+@font-face {
+  font-family: "NotoSansKR-Midium";
+  src: url(../font/NotoSansKR-Medium.otf);
+}
+@font-face {
+  font-family: "NotoSansKR-Regular";
+  src: url(../font/NotoSansKR-Regular.otf);
+}
+body,
+html {
+  background: #eeeeee;
+  color: #333;
+  font-family: "NotoSansKR-Regular";
+}
+
+.f__bold {
+  font-family: "NotoSansKR-Bold";
+}
+.f__midium {
+  font-family: "NotoSansKR-Midium";
+}
